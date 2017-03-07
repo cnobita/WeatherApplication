@@ -1,4 +1,4 @@
-package com.example.www.weatherapplication;
+package com.cyx.weatherapplication;
 
 import org.junit.Test;
 

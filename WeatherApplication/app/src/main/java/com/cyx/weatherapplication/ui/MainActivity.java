@@ -1,7 +1,9 @@
-package com.example.www.weatherapplication;
+package com.cyx.weatherapplication.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.cyx.weatherapplication.R;
 
 public class MainActivity extends AppCompatActivity {
 
