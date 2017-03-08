@@ -1,7 +1,6 @@
 package com.cyx.weatherapplication.entity;
 
 import java.util.List;
-
 /**
  * Created by cyx623823 on 2017/3/7.
  */
