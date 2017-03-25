@@ -1,10 +1,12 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'com.android.library'//注解式框架（黄油刀-butterknife）
+apply plugin: 'com.jakewharton.butterknife'//注解式框架（黄油刀-butterknife）
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.example.www.weatherapplication"
-        minSdkVersion 22
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -23,7 +25,22 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.1'
-    testCompile 'junit:junit:4.12'
+
+    //解析json工具（gson）
+    //网络访问框架（okhttp3）
+    //注解式框架（黄油刀-butterknife）
+    //约束布局:ConstraintLayout,（ConstraintLayout 可以看做 RelativeLayout 的升级版。）
+    //注解式框架（黄油刀-butterknife）
+    //LitePal数据库框架
+    //Glide用于加载和展示图片
+    compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.3.0'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'org.litepal.android:core:1.5.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 }

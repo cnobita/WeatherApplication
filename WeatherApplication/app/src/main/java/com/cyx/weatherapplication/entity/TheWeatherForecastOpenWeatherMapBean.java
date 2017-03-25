@@ -5,9 +5,9 @@ import java.util.List;
  * Created by cyx623823 on 2017/3/7.
  */
 
-//NOTICE 天气预报实体类
+//NOTICE 开放式天气预报地图 ：天气预报实体类
 
-public class TheWeatherForecastBean {
+public class TheWeatherForecastOpenWeatherMapBean {
 
     /**
      * cod : 200

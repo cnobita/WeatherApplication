@@ -6,9 +6,9 @@ import java.util.List;
  * Created by cyx623823 on 2017/3/7.
  */
 
-//NOTICE 当前天气情况实体类
+//NOTICE 开放式天气预报地图 ：当前天气情况实体类
 
-public class TheCurrentWeatherConditionsBean {
+public class TheCurrentWeatherConditionsOpenWeatherMapBean {
 
     /**
      * coord : {"lon":113.25,"lat":23.12}

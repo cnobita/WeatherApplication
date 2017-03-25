@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.cyx.weatherapplication.ui.activity.OkhttpTestActivity">
+    <Button
+        android:id="@+id/get_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get"/>
+    <Button
+        android:id="@+id/post_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post"/>
+    <Button
+        android:id="@+id/post_string_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PostString"/>
+    <Button
+        android:id="@+id/post_file_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PostFile"/>
+    <Button
+        android:id="@+id/doUpload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="doUpload"/>
+    <Button
+        android:id="@+id/doDownload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="doDownload"/>
+    <Button
+        android:id="@+id/doDownloadImg_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="doDownloadImg"/>
+    <TextView
+        android:id="@+id/show_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello Word"/>
+    <ImageView
+        android:id="@+id/show_ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"/>
+
+</LinearLayout>
