@@ -2,6 +2,7 @@ package com.cyx.weatherapplication.ui.fragment;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.cyx.weatherapplication.R;
 import com.cyx.weatherapplication.db.City;
 import com.cyx.weatherapplication.db.County;
 import com.cyx.weatherapplication.db.Province;
+import com.cyx.weatherapplication.ui.activity.WeatherActivity;
 import com.cyx.weatherapplication.util.HttpUtil;
 import com.cyx.weatherapplication.util.Utility;
 import org.litepal.crud.DataSupport;
@@ -105,6 +107,12 @@ public class ChooseAreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     selecteCity = cityList.get(position);
                     queryCounties();
+                } else if (currentLevel == LEVEL_COUNTY) {
+                    String weatherId = countyList.get(position).getWeatherId();
+                    Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                    intent.putExtra("weather_id", weatherId);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
@@ -118,7 +126,7 @@ public class ChooseAreaFragment extends Fragment {
                 }
             }
         });
-        queryProvinces();
+        queryProvinces();//xxx 1.也就是从这里开始加载省级数据的
     }
 
 
@@ -134,7 +142,7 @@ public class ChooseAreaFragment extends Fragment {
         titleText.setText("中国");
         backButton.setVisibility(View.GONE);
         provinceList = DataSupport.findAll(Province.class);
-        if (provinceList.size() > 0) {
+        if (provinceList.size() > 0) {//xxx 2.1 如果数据库可以读取到数据就直接显示到界面上
             dataList.clear();
             for (Province province : provinceList) {
                 dataList.add(province.getProvinceName());
@@ -144,7 +152,7 @@ public class ChooseAreaFragment extends Fragment {
             currentLevel = LEVEL_PROVINCE;
         } else {
             String address = "http://guolin.tech/api/china";
-            queryFromServer(address, "province");
+            queryFromServer(address, "province");          //xxx 2.2 如果从数据库没有读取到数据，就从服务器上查询数据
         }
 
     }
@@ -227,7 +235,7 @@ public class ChooseAreaFragment extends Fragment {
                         public void run() {
                             closeProgressDialog();
                             if ("province".equals(type)) {
-                                queryProvinces();
+                                queryProvinces();//xxx 3.再次调用了queryProvinces()方法来重新加载省级数据，由于queryProvinces();方法牵扯到了UI操作。
                             } else if ("city".equals(type)) {
                                 queryCities();
                             } else if ("county".equals(type)) {
