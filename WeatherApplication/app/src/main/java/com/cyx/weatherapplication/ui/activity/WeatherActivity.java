@@ -24,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.cyx.weatherapplication.R;
 import com.cyx.weatherapplication.gson.Forecast;
 import com.cyx.weatherapplication.gson.Weather;
+import com.cyx.weatherapplication.service.AutoUpdateService;
 import com.cyx.weatherapplication.util.HttpUtil;
 import com.cyx.weatherapplication.util.Utility;
 
@@ -272,6 +273,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
     /**
      * 加载必应每日一图
